@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinhThai</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="music-player">
+        <button id="toggleMusic">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="chimotxiu.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#">VinhThai</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#Donate">Donate</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Home Section -->
+<section id="home">
+    <div class="home-container">
+        <div class="home-content">
+            <h1>Hi, I'm <span class="highlight">Nguyen Thai Vinh</span></h1>
+            <p class="typing-text">I'm a </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/nguyenthaivinh23052005" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://github.com/vinh3123410433" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/nguyenthaivinhhhh_2005/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="home-image">
+            <div class="animated-3d-element">
+                <div class="cube">
+                    <div class="face front">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="face back">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <div class="face right">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="face left">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="face top">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="face bottom">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="profile.jpg" alt="Profile Picture">
+            </div>
+            <div class="about-text">
+                <p>Xin chào, mình là Nguyễn Thái Vinh, sinh viên năm 2 của Trường Đại học Sài Gòn. Mình đến từ Đăk Nông – vùng đất bình yên và trù phú của Tây Nguyên. Hiện tại, mình đang nỗ lực học tập để tích lũy kiến thức, phát triển kỹ năng và chuẩn bị cho những cơ hội trong tương lai.</p>
+                <div class="about-details">
+                    <div class="detail">
+                        <i class="fas fa-user"></i>
+                        <span>Name:</span> Nguyễn Thái Vinh
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Location:</span> Võ Oanh/Bình Thạnh
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email:</span> nguyenvinhthai11a8@gmail.com
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="assets/images/project1.jpg" alt="Project 1">
+                <h3>Project Title 1</h3>
+                <p>Project description goes here</p>
+                <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                    <a href="#" class="btn">Source Code</a>
+                </div>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <!-- Add more skills -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <h2>My Hobbies</h2>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <i class="fas fa-camera"></i>
+                <h3>Photography</h3>
+                <p>Description of your photography hobby</p>
+            </div>
+            <!-- Add more hobby cards -->
+        </div>
+    </section>
+
+
+    <section id="Donate">
+        <h2>Support Me</h2>
+        <div class="donate-container">
+            <div class="donate-content">
+                <div class="donate-text">
+                    <h3>If you appreciate my work, you can support me via:</h3>
+                    <p>Your support helps me continue creating and sharing more content!</p>
+                </div>
+                
+                <div class="bank-accounts">
+                    
+                    <div class="bank-card">
+                        <div class="bank-info">
+                            <img src="Sacombank.png" alt="MB Bank Logo">
+                            <h4>MB Bank</h4>
+                            <div class="account-details">
+                                <p><strong>Account Number:</strong> <span class="copyable">050147053514</span></p>
+                                <p><strong>Account Name:</strong> NGUYEN THAI VINH</p>
+                                <button class="copy-btn" data-copy="050147053514">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="qr-code">
+                            <img src="assets/images/mbbank-qr.png" alt="MB Bank QR Code">
+                            <p>Scan QR to transfer</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Momo -->
+                    <div class="bank-card">
+                        <div class="bank-info">
+                            <img src="momo.png" alt="Momo Logo">
+                            <h4>Momo</h4>
+                            <div class="account-details">
+                                <p><strong>Phone Number:</strong> <span class="copyable">0886845826</span></p>
+                                <p><strong>Account Name:</strong> NGUYEN THAI VINH</p>
+                                <button class="copy-btn" data-copy="0886845826">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="qr-code">
+                            <img src="assets/images/momo-qr.png" alt="Momo QR Code">
+                            <p>Scan QR to transfer</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Vietcombank -->
+                    <!-- <div class="bank-card">
+                        <div class="bank-info">
+                            <img src="assets/images/vcb-logo.png" alt="Vietcombank Logo">
+                            <h4>Vietcombank</h4>
+                            <div class="account-details">
+                                <p><strong>Account Number:</strong> <span class="copyable">9876543210</span></p>
+                                <p><strong>Account Name:</strong> NGUYEN VAN A</p>
+                                <button class="copy-btn" data-copy="9876543210">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="qr-code">
+                            <img src="assets/images/vcb-qr.png" alt="Vietcombank QR Code">
+                            <p>Scan QR to transfer</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <h2>Leave Feedback</h2>
+        <div class="feedback-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
