@@ -645,7 +645,7 @@ section.visible {
     position: relative;
     transform-style: preserve-3d;
     animation: rotate 20s infinite linear;
-    left: 200px;
+    left: 80px;
 }
 
 .face {
@@ -807,3 +807,185 @@ section.visible {
 .social-links a:hover i {
     color: #0a192f;
 }
+
+/* Responsive Design Improvements */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 15px 0;
+    }
+
+    .nav-content {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(10, 25, 47, 0.95);
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(100, 255, 218, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .nav-links a i {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    /* Home Section */
+    #home {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .home-content h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .typing-text {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    /* Social Links */
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-links a i {
+        font-size: 18px;
+    }
+
+    /* Music Player */
+    .music-player {
+        bottom: 80px; /* Điều chỉnh vị trí để không bị che bởi navigation */
+        right: 15px;
+    }
+
+    .music-player button {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Sections Padding */
+    section {
+        padding: 60px 15px !important;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-img img {
+        width: 200px;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    /* Skills Section */
+    .skill-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Hobbies Section */
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Donate Section */
+    .bank-accounts {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bank-card {
+        padding: 15px;
+    }
+
+    /* Section Headers */
+    section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 15px 70px; /* Thêm padding bottom để không bị che bởi navigation */
+    }
+}
+
+/* Small Phone Screens */
+@media screen and (max-width: 380px) {
+    .home-content h1 {
+        font-size: 1.8em;
+    }
+
+    .typing-text {
+        font-size: 1.2em;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-links a i {
+        font-size: 18px;
+    }
+}
+
+/* Navigation Icons */
+.nav-links a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* Add these to your HTML navigation links */
