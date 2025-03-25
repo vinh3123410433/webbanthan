@@ -956,7 +956,176 @@ section.visible {
     }
 }
 
-/* Small Phone Screens */
+
+/* Mobile Optimization Enhancements */
+
+@media screen and (max-width: 768px) {
+    /* Performance and Layout Improvements */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        max-width: 100%;
+    }
+
+    /* Navigation Optimization */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(10, 25, 47, 0.95);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        margin: 0;
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .nav-links a i {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+
+    /* Home Section Optimization */
+    #home {
+        padding: 70px 15px;
+        text-align: center;
+    }
+
+    .home-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 2.2em;
+        line-height: 1.2;
+    }
+
+    .typing-text {
+        font-size: 1.4em;
+    }
+
+    .animated-3d-element {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Social Links Optimization */
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Section Optimization */
+    section {
+        padding: 50px 15px !important;
+        overflow-x: hidden;
+    }
+
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .about-img img {
+        width: 250px;
+        max-width: 90%;
+    }
+
+    /* Projects and Skills Grid Optimization */
+    .projects-grid,
+    .skills-grid,
+    .hobbies-grid,
+    .bank-accounts {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Form and Input Optimization */
+    .feedback-form,
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Donate Section */
+    .bank-card {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .qr-code img {
+        max-width: 180px;
+    }
+
+    /* Footer Adjustment */
+    footer {
+        padding: 20px 15px 80px; /* Extra bottom padding for navigation */
+    }
+
+    /* Performance Tweaks */
+    * {
+        touch-action: manipulation; /* Improve touch responsiveness */
+    }
+
+    /* Reduce Animations for Performance */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+}
+
+/* Ultra Small Screen Optimization */
 @media screen and (max-width: 380px) {
     .home-content h1 {
         font-size: 1.8em;
@@ -966,26 +1135,21 @@ section.visible {
         font-size: 1.2em;
     }
 
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .nav-links a i {
+        font-size: 16px;
+    }
+
     .social-links a {
         width: 40px;
         height: 40px;
     }
 
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .nav-links a i {
-        font-size: 18px;
+    .animated-3d-element {
+        width: 200px;
+        height: 200px;
     }
 }
-
-/* Navigation Icons */
-.nav-links a::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-/* Add these to your HTML navigation links */
