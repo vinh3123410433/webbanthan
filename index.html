@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,29 +14,6 @@
 </head>
 <body>
 
-    <div class="music-player">
-        <div class="music-player-container">
-            <div class="player-controls">
-                <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
-                <button id="toggleMusic"><i class="fas fa-play"></i></button>
-                <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
-                <button id="toggleLoop"><i class="fas fa-redo"></i></button>
-            </div>
-            <div class="now-playing">
-                <span id="currentTrack">No track selected</span>
-            </div>
-            <div class="playlist">
-                <h3>Playlist</h3>
-                <ul id="playlist">
-                    <li data-src="chimotxiu.mp3">Chi mot xiu</li>
-                </ul>
-            </div>
-        </div>
-        <audio id="bgMusic">
-            <source src="chimotxiu.mp3" type="audio/mp3">
-        </audio>
-    </div>
-
     <nav>
         <div class="nav-content">
             <div class="logo">
@@ -47,6 +24,7 @@
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                 <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#music"><i class="fas fa-music"></i> Music</a></li>
                 <li><a href="#hobbies"><i class="fas fa-heart"></i> Hobbies</a></li>
                 <li><a href="#Donate"><i class="fas fa-donate"></i> Donate</a></li>
             </ul>
@@ -214,6 +192,33 @@
         </div>
     </section>
 
+    <section id="music">
+        <h2>My Music</h2>
+        <div class="music-container">
+            <div class="music-content">
+                <div class="player-container">
+                    <div class="player-controls">
+                        <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
+                        <button id="toggleMusic"><i class="fas fa-play"></i></button>
+                        <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
+                        <button id="toggleLoop"><i class="fas fa-redo"></i></button>
+                    </div>
+                    <div class="now-playing">
+                        <span id="currentTrack">No track selected</span>
+                    </div>
+                    <div class="playlist-container">
+                        <h3>Playlist</h3>
+                        <ul id="playlist">
+                            <li data-src="chimotxiu.mp3">Chi mot xiu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="bgMusic">
+            <source src="chimotxiu.mp3" type="audio/mp3">
+        </audio>
+    </section>
 
     <section id="Donate">
         <h2>Support Me</h2>
