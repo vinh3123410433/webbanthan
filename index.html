@@ -15,10 +15,24 @@
 <body>
 
     <div class="music-player">
-        <button id="toggleMusic">
-            <i class="fas fa-music"></i>
-        </button>
-        <audio id="bgMusic" loop>
+        <div class="music-player-container">
+            <div class="player-controls">
+                <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
+                <button id="toggleMusic"><i class="fas fa-play"></i></button>
+                <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
+                <button id="toggleLoop"><i class="fas fa-redo"></i></button>
+            </div>
+            <div class="now-playing">
+                <span id="currentTrack">No track selected</span>
+            </div>
+            <div class="playlist">
+                <h3>Playlist</h3>
+                <ul id="playlist">
+                    <li data-src="chimotxiu.mp3">Chi mot xiu</li>
+                </ul>
+            </div>
+        </div>
+        <audio id="bgMusic">
             <source src="chimotxiu.mp3" type="audio/mp3">
         </audio>
     </div>

@@ -1,18 +1,104 @@
 // Music Player Control
 const musicBtn = document.getElementById('toggleMusic');
+const prevBtn = document.getElementById('prevTrack');
+const nextBtn = document.getElementById('nextTrack');
+const loopBtn = document.getElementById('toggleLoop');
 const bgMusic = document.getElementById('bgMusic');
-let isMusicPlaying = false;
+const playlist = document.getElementById('playlist');
+const currentTrackSpan = document.getElementById('currentTrack');
 
+let isPlaying = false;
+let isLooping = false;
+let currentTrackIndex = 0;
+
+// Danh sách nhạc
+const tracks = [
+    { src: 'chimotxiu.mp3', title: 'Chi mot xiu' }
+    // Thêm các bài hát khác vào đây với cùng format
+];
+
+// Cập nhật hiển thị bài hát hiện tại
+function updateCurrentTrack() {
+    currentTrackSpan.textContent = tracks[currentTrackIndex].title;
+    bgMusic.src = tracks[currentTrackIndex].src;
+    
+    // Cập nhật active track trong playlist
+    const playlistItems = playlist.getElementsByTagName('li');
+    for (let i = 0; i < playlistItems.length; i++) {
+        playlistItems[i].classList.remove('active');
+    }
+    playlistItems[currentTrackIndex].classList.add('active');
+}
+
+// Điều khiển phát/dừng
 musicBtn.addEventListener('click', () => {
-    if (isMusicPlaying) {
+    if (isPlaying) {
         bgMusic.pause();
-        musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+        musicBtn.innerHTML = '<i class="fas fa-play"></i>';
     } else {
         bgMusic.play();
         musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
     }
-    isMusicPlaying = !isMusicPlaying;
+    isPlaying = !isPlaying;
 });
+
+// Điều khiển lặp lại
+loopBtn.addEventListener('click', () => {
+    isLooping = !isLooping;
+    bgMusic.loop = isLooping;
+    loopBtn.classList.toggle('active');
+});
+
+// Chuyển bài trước
+prevBtn.addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+    updateCurrentTrack();
+    if (isPlaying) {
+        bgMusic.play();
+    }
+});
+
+// Chuyển bài tiếp theo
+nextBtn.addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    updateCurrentTrack();
+    if (isPlaying) {
+        bgMusic.play();
+    }
+});
+
+// Xử lý khi bài hát kết thúc
+bgMusic.addEventListener('ended', () => {
+    if (!isLooping) {
+        currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+        updateCurrentTrack();
+        if (isPlaying) {
+            bgMusic.play();
+        }
+    }
+});
+
+// Khởi tạo playlist
+function initializePlaylist() {
+    playlist.innerHTML = '';
+    tracks.forEach((track, index) => {
+        const li = document.createElement('li');
+        li.textContent = track.title;
+        li.dataset.src = track.src;
+        li.addEventListener('click', () => {
+            currentTrackIndex = index;
+            updateCurrentTrack();
+            if (isPlaying) {
+                bgMusic.play();
+            }
+        });
+        playlist.appendChild(li);
+    });
+}
+
+// Khởi tạo trình phát nhạc
+initializePlaylist();
+updateCurrentTrack();
 
 // Typing Animation
 const typingText = document.querySelector('.typing-text');
