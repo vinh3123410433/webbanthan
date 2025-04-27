@@ -87,11 +87,25 @@ window.addEventListener('load', () => {
     }
 });
 
-// Smooth Scroll for Navigation Links
+// Ensure page scrolls to top when loaded
+window.onload = function() {
+    window.scrollTo(0, 0);
+    const loader = document.querySelector('.loading');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+};
+
+// Enhanced smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const target = document.querySelector(this.getAttribute('href'));
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        
+        window.scrollTo({
+            top: targetPosition,
             behavior: 'smooth'
         });
     });
@@ -115,3 +129,75 @@ document.querySelectorAll('.copy-btn').forEach(button => {
         });
     });
 });
+
+// Add touch interaction support
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+let xDown = null;
+let yDown = null;
+
+function handleTouchStart(evt) {
+    const firstTouch = evt.touches[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    const xUp = evt.touches[0].clientX;
+    const yUp = evt.touches[0].clientY;
+    const xDiff = xDown - xUp;
+    const yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) {
+            // Swipe left
+        } else {
+            // Swipe right
+        }
+    }
+
+    xDown = null;
+    yDown = null;
+}
+
+// Optimize animations for mobile
+function checkMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+if (checkMobile()) {
+    // Reduce animation intensity on mobile
+    document.querySelectorAll('.animated-3d-element').forEach(element => {
+        element.style.animationDuration = '30s';
+    });
+    
+    // Disable heavy animations on scroll for better performance
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(() => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    }, { passive: true });
+}
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
