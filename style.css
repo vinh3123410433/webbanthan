@@ -299,6 +299,7 @@ nav {
     padding: 30px;
     text-align: center;
     transition: all 0.3s ease;
+    min-height: 350px;
 }
 
 .hobby-card:hover {
@@ -315,6 +316,29 @@ nav {
 .hobby-card h3 {
     color: #64ffda;
     margin-bottom: 15px;
+}
+
+.hobby-image {
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hobby-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hobby-card:hover .hobby-image img {
+    transform: scale(1.1);
+}
+
+.hobby-card p {
+    color: #ccd6f6;
+    font-size: 0.9em;
+    line-height: 1.5;
 }
 
 /* Feedback Section */
